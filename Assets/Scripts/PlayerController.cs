@@ -34,4 +34,13 @@ public class PlayerController : MonoBehaviour {
 		// apply forces to the rigid body of the Player object
 		rb.AddForce(movement * speed);
 	}
+
+	void OnTriggerEnter(Collider other) 
+	{
+		if (other.gameObject.CompareTag ("Pick Up")) 
+		{
+			other.gameObject.SetActive (false);
+		}
+		//Destroy(other.gameObject);
+	}
 }
